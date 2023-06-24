@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container my-5">
+        <form method="post" class="shadow-lg p-3 mb-5 bg-white rounded">
+            <h1 class="text-center">Login</h1>
+            {% csrf_token %}
+            <div class="form-group mb-4">
+                {{form.username.label_tag}}
+                {{form.username}}
+            </div>
+
+            <div class="from-group mb-4">
+                {{ form.password.label_tag }}
+                {{ form.password }}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
+            
+            <p class="text-center mt-3">Create a new <a href="{% url 'register' %}">Account</a>?</p>
+
+        </form>
+
+    </div>
+</body>
+</html>
